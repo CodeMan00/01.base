@@ -1,0 +1,23 @@
+<c3p0-config>
+<!--    数据源的名称  代表连接池  hello这个名称可以任意，这个写什么，创建数据源对象时，参数就要写什么-->
+    <named-config name="dataSource">
+
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/myemployees</property>
+<!--          批处理：  ?rewriterBatchedStatements=true-->
+
+        <property name="user">root</property>
+
+        <property name="password">123456</property>
+
+<!--        每次增长的连接数-->
+        <property name="acquireIncrement">5</property>
+<!--        初始化的连接数-->
+        <property name="initialPoolSize">10</property>
+        <property name="minPoolSize">5</property>
+        <property name="maxPoolSize">50</property>
+
+        <property name="maxStatementsPerConnection">2</property>
+    </named-config>
+</c3p0-config>
